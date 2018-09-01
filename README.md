@@ -73,7 +73,11 @@ client.send_sms(from: "AcmeInc", to: "44700900000", message: "Hello World")
 
 ## Development
 
-TODO: Write development instructions here
+1. Write tests for stuff and put it in specs.
+2. Use a named, defaulted argument for faking API calls rather than mocks and
+   stubs and so on.
+3. Follow the Crystal style guide.
+4. Don't check in binaries or `dwarf` files.
 
 ## Contributing
 
