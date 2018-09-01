@@ -20,6 +20,48 @@ require "nexmo"
 
 TODO: Write usage instructions here
 
+
+## API coverage
+
+* Account
+    * [ ] Balance
+    * [ ] Pricing
+    * [ ] Settings
+    * [ ] Top Up
+    * [ ] Numbers
+        * [ ] Search
+        * [ ] Buy
+        * [ ] Cancel
+        * [ ] Update
+* Number Insight
+    * [ ] Basic
+    * [ ] Standard
+    * [ ] Advanced
+    * [ ] Webhook Notification
+* Verify
+    * [ ] Verify
+    * [ ] Check
+    * [ ] Search
+    * [ ] Control
+* Messaging
+    * [X] Send
+    * [ ] Delivery Receipt
+    * [ ] Inbound Messages
+    * [ ] Search
+        * [ ] Message
+        * [ ] Messages
+        * [ ] Rejections
+    * [ ] US Short Codes
+        * [ ] Two-Factor Authentication
+        * [ ] Event Based Alerts
+            * [ ] Sending Alerts
+            * [ ] Campaign Subscription Management
+* Voice
+    * [ ] Outbound Calls
+    * [ ] Inbound Call
+    * [ ] Text-To-Speech Call
+    * [ ] Text-To-Speech Prompt
+
 ## Development
 
 TODO: Write development instructions here
