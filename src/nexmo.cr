@@ -1,10 +1,11 @@
 require "./nexmo/*"
 require "crest"
+require "uri"
 
 # TODO: Write documentation for `Nexmo`
 module Nexmo
   ALLOWED_SMS_OPTIONAL_FIELDS = [
-    :ttl, :type
+    :ttl, :type, :callback
   ]
   ALLOWED_SMS_TYPES = [
     :text, :binary, :wappush, :vcal, :vcard
@@ -51,7 +52,7 @@ module Nexmo
         to : String,
         **opts)
 
-      data = {} of Symbol => String | Int32 | Nil
+      data = {} of Symbol => String | Int32 | Bool | Nil
       data[:api_key] = @api_key.as(String)
       data[:api_secret] = @api_secret.as(String)
       data[:from] = from
@@ -77,6 +78,13 @@ module Nexmo
       if data.has_key?(:type)
         unless ALLOWED_SMS_OPTIONAL_FIELDS.includes? data[:type]
           raise "type parameter has a non-allowed value"
+        end
+      end
+
+      if data.has_key?(:callback)
+        callback_parsed = URI.parse(data[:callback].as(String))
+        if !(callback_parsed.scheme == "http" || callback_parsed.scheme == "https")
+          raise "callback URI needs to be an http/https resource"
         end
       end
 

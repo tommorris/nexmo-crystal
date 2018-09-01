@@ -25,4 +25,11 @@ describe Nexmo do
       a.send_sms(from: "AcmeInc", to: "447700900000", message: "Hello World", type: "fake")
     end
   end
+
+  it "should validate real URLs from fake ones for callbacks" do
+    expect_raises(Exception, /callback URI/) do
+      a = Nexmo::Client.new(api_key: "abc1234", api_secret: "xxyyzz567890")
+      a.send_sms(from: "AcmeInc", to: "447700900000", message: "Hello World", callback: "about:blank")
+    end
+  end
 end
