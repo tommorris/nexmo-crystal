@@ -20,11 +20,14 @@ dependencies:
 
 ## Usage
 
+To send an SMS:
+
 ```crystal
 require "nexmo"
-```
 
-TODO: Write usage instructions here
+client = Nexmo::Client.new(api_key: "abc1234", api_secret: "def987654")
+client.send_sms(from: "AcmeInc", to: "44700900000", message: "Hello World")
+```
 
 
 ## API coverage
