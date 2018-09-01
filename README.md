@@ -1,6 +1,12 @@
 # nexmo-crystal
 
-TODO: Write a description here
+An attempt towards a wrapper library for
+[Nexmo APIs](https://developer.nexmo.com/) written in
+[Crystal](https://crystal-lang.org/).
+
+The library aims towards correctness rather than comprehensiveness. Correctness
+in this sense is about using the compiler to as many poorly formed requests
+as we can, then testing for well-formed requests at runtime.
 
 ## Installation
 
